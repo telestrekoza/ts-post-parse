@@ -2,7 +2,7 @@
 /**
  * @package TS_Post_Parse
  * @author Nazar Kulyk
- * @version 1.3
+ * @version 1.4
  */
 /*
 Plugin Name: Telestrekoza Post Parse
@@ -35,7 +35,7 @@ function ts_post_parse_replaces($content) {
 }
 
 // Now we set that function up to execute when the admin_footer action is called
-add_action('content_save_pre', array(&$this, 'ts_post_parse_do'));
-add_filter('the_content', array(&$this, 'ts_post_parse_replaces'));
+add_action('content_save_pre', 'ts\plugins\ts_post_parse_do');
+add_filter('the_content', 'ts\plugins\ts_post_parse_replaces');
 
 ?>
